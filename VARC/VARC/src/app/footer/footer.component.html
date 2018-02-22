@@ -1,5 +1,26 @@
-﻿<div>
-    <h3>
-        inside the footer div
-    </h3>
+﻿<div class="footerDiv">
+    <span>
+        My Projects
+    </span>
+    <span id="show">
+        
+    </span>
+    <table class="tbl-Footer">
+        <tr>
+            <td>
+                <input type="button" disabled="disabled" id="btnprev" class="btn-prev" value="<<" alt="Previous" (click)="prevButton(this)" />
+            </td>
+            <td *ngFor="let item of projDetail" class="blockItem" (click)="projNotification(this)">
+                <ul>
+                    <li>{{item.name}}</li>
+                    <li>{{item.location}}</li>
+                    <li>{{item.client}}</li>
+                </ul>
+            </td>
+
+            <td>
+                <input type="button" disabled="disabled" id="btnnext" class="btn-next" value=">>" alt="Next" (click)="nextButton(this)" />
+            </td>
+        </tr>
+    </table>
 </div>

@@ -1,22 +1,11 @@
-﻿//import { Component } from "@angular/core";
+﻿import { Component, OnInit } from '@angular/core';
 
-//@Component({
-//    selector: 'footer-app',
-//    templateUrl:'app/footer/footer.component.html'
-//})
-
-//export class FooterComponent {
-
-//}
-
-import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/dataService';
 
 @Component({
     selector: 'app-footer',
     templateUrl: 'app/footer/footer.component.html',
-    styleUrls: ['app/footer/footer.component.css'],
-    providers: [DataService]
+    styleUrls: ['app/footer/footer.component.css']
 })
 
 export class FooterComponent implements OnInit {
@@ -27,16 +16,15 @@ export class FooterComponent implements OnInit {
     nextIndex: number = 5;
     projDetail: any = [];
 
-    constructor(private _dataService: DataService) {
-        this.prepareTotalCollectionFromPath();
-    }
+    constructor(private _dataService: DataService) { }
 
     ngOnInit(): void {
+        this.prepareTotalCollectionFromPath();
         this.prepareList();
     }
 
+    //First Time we fetch the data from the service 
     prepareTotalCollectionFromPath() {
-
         if (this.totalCollection === null) {
             this.totalCollection = this._dataService.testMethod();
         }
@@ -84,55 +72,8 @@ export class FooterComponent implements OnInit {
         this.prepareList();
     }
 
-    projNotification() {
-        //this.show = document.getElementById("show") ;
-        //if (!this.show.) {
-        //    this.show.disabled = true;
-        //}
-        //else
-        //{
-        //    this.show.disabled = false;
-        //}
-    }
-    //totalCollection: any = [];
-    totalCollection = [{
-        name: '1Independent House',
-        location: 'jksadghfjk',
-        client: 'wjed'
-    },
-    {
-        name: '2Independent House',
-        location: 'jksadghfjk',
-        client: 'wjed'
-    },
-    {
-        name: '3Independent House',
-        location: 'jksadghfjk',
-        client: 'wjed'
-    },
-    {
-        name: '4Independent House',
-        location: 'jksadghfjk',
-        client: 'wjed'
-    },
-    {
-        name: '5Independent House',
-        location: 'jksadghfjk',
-        client: 'wjed'
-    }, {
-        name: '6Independent House',
-        location: 'jksadghfjk',
-        client: 'wjed'
-    }, {
-        name: '7Independent House',
-        location: 'jksadghfjk',
-        client: 'wjed'
-    }, {
-        name: '8Independent House',
-        location: 'jksadghfjk',
-        client: 'wjed'
-    }]
 
+    totalCollection: any = null;
 
 }
 

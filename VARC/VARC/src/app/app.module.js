@@ -10,6 +10,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var footer_component_1 = require("./footer/footer.component");
+var dataService_1 = require("./services/dataService");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -17,6 +18,7 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule],
             declarations: [app_component_1.AppComponent, footer_component_1.FooterComponent],
+            providers: [dataService_1.DataService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
